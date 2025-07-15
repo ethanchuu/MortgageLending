@@ -36,8 +36,8 @@ def main():
     # Uncomment to analyze approval rates by race or sex
     # race_summary = compute_disparate_approval_rates(hmda, group_col='applicant_race_1')
     # plot_disparate_approval_rates(race_summary, group_col='applicant_race_1')
-    # sex_summary = compute_disparate_approval_rates(hmda, group_col='applicant_sex')
-    # plot_disparate_approval_rates(sex_summary, group_col='applicant_sex')
+    sex_summary = compute_disparate_approval_rates(hmda, group_col='applicant_sex')
+    plot_disparate_approval_rates(sex_summary, group_col='applicant_sex')
 
     # TEMPORARY: create dummy default label
     hmda['default_flag'] = (hmda['loan_amount_000s'] > 200)  # example threshold
