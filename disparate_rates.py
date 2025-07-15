@@ -24,5 +24,3 @@ def plot_disparate_approval_rates(summary_df, group_col):
     plt.xticks(rotation=45)
     plt.tight_layout()
     plt.show()
-
-# Optional: future method for logistic regression can be added later here
