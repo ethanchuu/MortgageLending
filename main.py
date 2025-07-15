@@ -29,18 +29,18 @@ def main():
     print("\n--- Action Summary ---")
     print_action_summary(hmda)
     print("\n--- County Summary ---")
-    print_county_summary(hmda, county_column='county_name')  # or 'county' if different
+    print_county_summary(hmda, county_column='county_name')
     print("\n--- Race Summary ---")
     print_race_summary(hmda)
 
     # Uncomment to analyze approval rates by race or sex
-    # race_summary = compute_disparate_approval_rates(hmda, group_col='applicant_race_1')
-    # plot_disparate_approval_rates(race_summary, group_col='applicant_race_1')
-    sex_summary = compute_disparate_approval_rates(hmda, group_col='applicant_sex')
-    plot_disparate_approval_rates(sex_summary, group_col='applicant_sex')
+    race_summary = compute_disparate_approval_rates(hmda, group_col='applicant_race_1')
+    plot_disparate_approval_rates(race_summary, group_col='applicant_race_1')
+    # sex_summary = compute_disparate_approval_rates(hmda, group_col='applicant_sex')
+    # plot_disparate_approval_rates(sex_summary, group_col='applicant_sex')
 
     # TEMPORARY: create dummy default label
-    hmda['default_flag'] = (hmda['loan_amount_000s'] > 200)  # example threshold
+    hmda['default_flag'] = (hmda['loan_amount_000s'] > 200)
 
     # Prepare data for modeling
     X_train, X_test, y_train, y_test = prepare_data(hmda, target_col='default_flag')
